@@ -1,0 +1,7 @@
+- id: format-kotlin
+  name: Ktlint Check
+  description: Runs KTLint over Kotlin source files
+  entry: hooks/ktlint.sh
+  language: script
+  types: [kotlin]
+  pass_filenames: false
