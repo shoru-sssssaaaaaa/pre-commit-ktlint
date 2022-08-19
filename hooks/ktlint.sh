@@ -3,18 +3,18 @@ set -eu
 SCRIPT_DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
 bash "${SCRIPT_DIR}"/_installation.sh
 
-args=()
 i=1
 for arg in "$@"; do
-  snyk_args+=("$arg")
+  ktlint_args+=("$arg")
   i=$((i + 1))
 done
 
 if [[ $i -gt 1 ]]; then
-    echo "Kotlin Format check with KTlint is running against specified files..."
-    echo "${snyk_args[*]}"
-    ktlint "${snyk_args[*]}"
+    echo "Kotlin Format check with ktlint is running against specified files..."
+    echo "${ktlint_args[*]}"
+    ktlint "${ktlint_args[*]}"
 else
-    echo "Kotlin format check with KTlint is running..."
+    echo "Kotlin format check with ktlint is running..."
     ktlint
 fi
+echo "Kotlin format check finished"
