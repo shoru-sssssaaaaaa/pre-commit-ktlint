@@ -4,8 +4,6 @@ if ! command -v ktlint &> /dev/null
 then
   if ! command -v brew &> /dev/null
   then
-    brew install ktlint
-  else
     echo "Installing ktlint..."
     curl -sSLO https://github.com/pinterest/ktlint/releases/download/0.46.1/ktlint && chmod a+x ktlint
     echo "Installation done"
@@ -22,5 +20,7 @@ then
       rm -f ktlint
       exit 1
     fi
+  else
+    brew install ktlint
   fi
 fi
