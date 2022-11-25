@@ -1,5 +1,6 @@
 # Klint pre-commit hooks
 
+![GitHub release](https://img.shields.io/github/v/release/shoru-sssssaaaaaa/pre-commit-ktlint?include_prereleases)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/shoru-sssssaaaaaa/pre-commit-ktlint/main.svg)](https://results.pre-commit.ci/latest/github/shoru-sssssaaaaaa/pre-commit-ktlint/main)
 
 1. [format-kotlin](#format-kotlin)
