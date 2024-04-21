@@ -10,7 +10,7 @@ repos:
     hooks:
       - id: detect-secrets
         stages: ["commit", "push"]
-  - repo: https://github.com/zricethezav/gitleaks
+  - repo: https://github.com/gitleaks/gitleaks
     rev: v8.18.2
     hooks:
       - id: gitleaks
@@ -33,7 +33,7 @@ repos:
       - id: yamllint
   # Other
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: check-merge-conflict
       - id: check-json
