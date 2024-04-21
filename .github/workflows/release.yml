@@ -1,24 +1,25 @@
 ---
-name: Create release
+name: Release
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
-  create_release:
-    name: Release
+  create-release:
+    name: Create release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout ${{ github.repository }}
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Get changelog
         id: changelog
         uses: simbo/changes-since-last-release-action@v1
       - name: Create release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref }}
           name: ${{ github.ref_name }}
