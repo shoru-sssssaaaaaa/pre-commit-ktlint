@@ -8,6 +8,7 @@ LIB_DIR_PATH="${SRC_DIR_PATH}/lib"
 . "${LIB_DIR_PATH}/logging.sh"
 
 install_ktlint() {
+  ktlint_version="${1}"
   if command -v ktlint &> /dev/null; then
     ktlint_path="$(which ktlint)"
   else
@@ -17,11 +18,12 @@ install_ktlint() {
       log_info "Installation done"
       ktlint_path="$(which ktlint)"
     else
-      curl -sSLO https://github.com/pinterest/ktlint/releases/download/1.5.0/ktlint && chmod a+x ktlint
+      curl -sSLO "https://github.com/pinterest/ktlint/releases/download/${ktlint_version}/ktlint"
+      chmod a+x ktlint
       log_info "Installation done"
       log_info "Verifying ktlint..."
       curl -sS https://keybase.io/ktlint/pgp_keys.asc | gpg --import
-      curl -sSLO https://github.com/pinterest/ktlint/releases/download/1.5.0/ktlint.asc
+      curl -sSLO "https://github.com/pinterest/ktlint/releases/download/${ktlint_version}/ktlint.asc"
       if gpg --verify ktlint.asc ktlint ; then
         log_info "Verification passed"
         rm -f ktlint.asc
