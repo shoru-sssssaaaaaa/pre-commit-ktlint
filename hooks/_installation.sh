@@ -13,8 +13,8 @@ install_ktlint() {
     ktlint_path="$(which ktlint)"
   else
     log_info "Installing ktlint..."
-    if command -v brew &> /dev/null; then
-      brew install ktlint
+    if ! command -v brew &> /dev/null; then
+      brew install ktlint 1>&2
       log_info "Installation done"
       ktlint_path="$(which ktlint)"
     else
