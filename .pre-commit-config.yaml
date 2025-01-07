@@ -1,6 +1,6 @@
 ---
 default_install_hook_types: ["pre-commit", "pre-push"]
-default_stages: ["commit"]
+default_stages: ["pre-commit"]
 exclude: ^\.gitleaks\.toml$
 minimum_pre_commit_version: 2.18.0
 repos:
@@ -9,15 +9,15 @@ repos:
     rev: v1.5.0
     hooks:
       - id: detect-secrets
-        stages: ["commit", "push"]
+        stages: ["pre-commit", "pre-push"]
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.4
+    rev: v8.22.1
     hooks:
       - id: gitleaks
-        stages: ["commit", "push"]
+        stages: ["pre-commit", "pre-push"]
   # Markdown
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.41.0
+    rev: v0.43.0
     hooks:
       - id: markdownlint
   # Shell
@@ -33,19 +33,19 @@ repos:
       - id: yamllint
   # Other
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
       - id: check-merge-conflict
       - id: check-json
       - id: detect-private-key
-        stages: ["commit", "push"]
+        stages: ["pre-commit", "pre-push"]
       - id: end-of-file-fixer
-        stages: ["commit"]
+        stages: ["pre-commit"]
       - id: mixed-line-ending
         args: ["--fix=lf"]
       - id: no-commit-to-branch
       - id: trailing-whitespace
-        stages: ["commit"]
+        stages: ["pre-commit"]
 ci:
   autofix_prs: true
   autoupdate_schedule: quarterly
