@@ -17,9 +17,9 @@ done
 if [ "${i}" -gt 1 ]; then
   echo "Kotlin Format check with ktlint is running against specified files..."
   echo "${ktlint_args[*]}"
-  ${ktlint_path} "${ktlint_args[*]}"
+  "${ktlint_path}" "${ktlint_args[*]}"
 else
   echo "Kotlin format check with ktlint is running..."
-  ${ktlint_path}
+  "${ktlint_path}"
 fi
 echo "Kotlin format check finished"
