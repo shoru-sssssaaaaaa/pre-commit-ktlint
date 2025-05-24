@@ -4,7 +4,7 @@ set -eu
 SCRIPT_DIR="$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)"
 . "${SCRIPT_DIR}"/_installation.sh
 
-KTLINT_VERSION="1.5.0"
+KTLINT_VERSION="1.6.0"
 
 ktlint_path=$(install_ktlint "${KTLINT_VERSION}")
 echo "${ktlint_path}"
