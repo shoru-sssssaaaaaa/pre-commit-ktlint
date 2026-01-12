@@ -10,13 +10,13 @@ repos:
       - id: detect-secrets
         stages: ["pre-commit", "pre-push"]
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.28.0
+    rev: v8.30.0
     hooks:
       - id: gitleaks
         stages: ["pre-commit", "pre-push"]
   # Markdown
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.45.0
+    rev: v0.47.0
     hooks:
       - id: markdownlint
   # Shell
