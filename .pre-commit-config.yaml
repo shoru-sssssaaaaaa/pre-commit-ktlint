@@ -16,7 +16,7 @@ repos:
         stages: ["pre-commit", "pre-push"]
   # Markdown
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.47.0
+    rev: v0.48.0
     hooks:
       - id: markdownlint
   # Shell
@@ -29,7 +29,7 @@ repos:
         stages: ["pre-commit"]
   # Yaml
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.37.1
+    rev: v1.38.0
     hooks:
       - id: yamllint
   # Other
